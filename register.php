@@ -7,7 +7,7 @@ $db_name	= "cert";
  
 $con = mysqli_connect($host, $username, $password,$db_name);
 
-$username =$_POST['Username'];
+$username =$_POST['EmailAdd'];
 $password =md5($_POST['Password']);
 
 

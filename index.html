@@ -20,7 +20,7 @@
 					</div>
 					<div>
 						<h5></h5>
-						<input class="input" type="text" placeholder="Username" name="Username" required>
+						<input class="input" type="text" placeholder="Email Address" name="EmailAdd" pattern=".+@gmail.com" required  oninvalid="this.setCustomValidity('Enter valid Email Adreess : @gmail.com ')"  oninput="this.setCustomValidity('')">
 					</div>
 				</div>
 				<div class="input-div two">
@@ -32,13 +32,12 @@
 						<input class="input" type="Password" placeholder="Password" name="Password" required>
 					</div>
 				</div>
-				<input type="submit" class="btn" value="LOGIN" formaction="options.html">
+				<input type="submit" class="btn" value="LOGIN" formaction="login.php">
 				<input type="submit" class="btn" value="SIGN UP">
 			</form>
 		</div>	
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
-	
 
 </body>
 </html>
