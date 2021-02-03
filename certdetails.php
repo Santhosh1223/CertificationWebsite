@@ -19,23 +19,27 @@ else{
 	$datecert =$_POST['DateCert'];
 	$certexp =$_POST['CertExp'];
 	$validity =$_POST['Validity'];
+
 	
+	
+	$query6="SELECT CertificationID FROM certificationdetails WHERE CertificationID= '".$certid."'";
+	$result6=mysqli_query($con,$query6);
+	if (mysqli_num_rows($result6) > 0) {
+		
+			echo '<script>alert("Certification ID already exists!")</script>';
+            echo "<script>location.href='upload.php'</script>";
+	}
+
 	$query3="INSERT INTO certificationdetails (ID,EmployeeName,CSP,CertificationLevel,CertificationName,CertificationID,CertificationDate,CertificationExpDate,Validity) VALUES('$empid','$empname','$csp','$certlevel','$certname','$certid','$datecert','$certexp','$validity')";
 	$result3=mysqli_query($con,$query3);
 	if($result3){
-	echo "uploaded";
 
 
+	echo "<script>location.href='options.php'</script>";
 
-	echo "$empname";
-	echo "$csp";
-	echo "$certlevel";
-	echo "$certname";
-	echo "$certid";
-	echo "$datecert";
-	echo "$certexp ";
-	echo "$validity";
+
 }
 
-	}
+
+}
 ?>

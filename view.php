@@ -16,8 +16,11 @@ if(!isset($_SESSION['ID'])){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 <style type="text/css">
 	
 table {
@@ -38,27 +41,34 @@ th, td {
  background-color: #fff;
 }
 #t01 th {
-  background-color: black;
-  color: white;
+  background-color: #fe7879 ;
+  color: black;
 }
 </style>
-<body>
-	<div class="w3-content">
+<body style="background-color: #FFD95C;">
+		<form><br><br><h2 style="padding-left: 550px; padding-top: 10px;color: #333; font-size: 40px;">Certification Record(s)</h2>
+		</form>
 
-      <div class="w3-card w3-white w3-hover-shadow w3-padding" style="margin-left: %;margin-right: %; margin-top: 10%;">
-      <br>
-      <br>
-<table id="t01" align="center">
-  <tr>
-    <th>Employee Name &nbsp;</th>
-    <th>CSP</th>
-    <th>Certification Level</th>
-    <th>Certification Name</th>
-    <th>Certification ID</th>
-    <th>Date of certification</th>
-    <th>Expiry Date of Certification</th>
-	<th>Validity</th>
-  </tr>
+		<div class="l" style="padding-right: 1.5rem; ">
+
+	<button class="btn" style="background-color: #333; width: 15%; float: right;" type="button" onclick="location.href='logout.php';">
+						<i class="fas fa-power-off"></i>
+					
+				Logout</button>
+	</div>
+
+      <div class="w3-card w3-yellow w3-white w3-hover-shadow" style=" padding: 20px; margin-left:5%;margin-right:5%; margin-top: 5%; border-radius: 25px;">
+			<table id="t01" align="center" class="tt">
+  			<tr>
+    		<th>Employee Name &nbsp;</th>
+    		<th>CSP</th>
+    		<th>Certification Level</th>
+    		<th>Certification Name</th>
+    		<th>Certification ID</th>
+    		<th>Date of certification</th>
+    		<th>Expiry Date of Certification</th>
+			<th>Validity</th>
+  			</tr>
 
   <?php
 
@@ -78,14 +88,21 @@ th, td {
 				else{
 					$cs="Azure";
 				}
+				
+				$date1=date_create($row4[6]);
+				$d1=date_format($date1,"d-m-Y");
+
+				$date2=date_create($row4[7]);
+				$d2=date_format($date2,"d-m-Y");
+
 				echo "<tr>    
 				<td>$row4[1]</td>
 				<td>$cs</td>
 				<td>$row4[3]</td>
 				<td>$row4[4]</td>
 				<td>$row4[5]</td>
-				<td>$row4[6]</td>
-				<td>$row4[7]</td>
+				<td>$d1</td>
+				<td>$d2</td>
 				<td>$row4[8]</td>
 				</tr>";
 			}
@@ -94,15 +111,8 @@ th, td {
 
 
   ?>
-
-
-
-
-
-
-
 </table>
-</div>
+
 </div>
 </body>
 </html>

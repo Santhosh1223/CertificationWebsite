@@ -21,11 +21,27 @@ if(!isset($_SESSION['ID'])){
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
+	
+
 	<img class="upldicon" src="img/upld.svg">
 
+	<div class="l" style="padding-right: 1.5rem; ">
+
+	<button class="btn" style="background-color: #333; width: 15%; float: right;" type="button" onclick="location.href='logout.php';">
+						<i class="fas fa-power-off"></i>
+					
+				Logout</button>
+	</div>
+
 	<div class="container">
+
 		<div class="upload-container">
+
 			<form action="register.php" method="post">
+
+
+
+
 				
 				<div class="input-div one">
 					<div class="i">
@@ -76,7 +92,7 @@ if(!isset($_SESSION['ID'])){
 						<i class="fas fa-calendar-alt"></i>
 					</div>
 					<div>
-						<input placeholder="Date of Certification" class="input" type="text" name="DateCert" onfocus="(this.type='date')" id="CertDate">
+						<input placeholder="Date of Certification" class="input" max="<?php echo date("Y-m-d"); ?>" type="text" name="DateCert" onfocus="(this.type='date')" id="CertDate">
 					</div>
 				</div>
 				<div class="input-div one">
@@ -84,7 +100,7 @@ if(!isset($_SESSION['ID'])){
 						<i class="fas fa-calendar-alt"></i>
 					</div>
 					<div>
-						<input placeholder="Expiry Date of certification" class="input" type="text" name="CertExp" onfocus="(this.type='date')" id="ExpiryDate">
+						<input placeholder="Expiry Date of certification" min="<?php echo date("Y-m-d"); ?>" class="input" type="text" name="CertExp" onfocus="(this.type='date')" id="ExpiryDate">
 					</div>
 				</div>
 				<div class="input-div one">
@@ -103,5 +119,6 @@ if(!isset($_SESSION['ID'])){
 		</div>	
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
+
 </body>
 </html>

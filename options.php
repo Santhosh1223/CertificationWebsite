@@ -19,6 +19,15 @@ if(!isset($_SESSION['ID'])){
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
+
+  	<div style="padding-right: 1.5rem;">
+
+	<button class="btn" style="background-color: #333; width: 15%; float: right;" type="button" onclick="location.href='logout.php';">
+						<i class="fas fa-power-off"></i>
+					
+				Logout</button>
+	</div>
+  	
 	<img class="bg" src="img/bg3.png">
 	<div class="options-container">
 			<input type="submit" class="btn one" value="UPLOAD CERTIFICATE" onclick="location.href='upload.php';">

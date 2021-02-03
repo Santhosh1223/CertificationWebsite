@@ -16,7 +16,11 @@ $query="INSERT INTO authentication (USERNAME,PASSWORD) VALUES('$username','$pass
 $result=mysqli_query($con,$query);
 
 if($result){
-	echo "uploaded";
+
+	
+	echo "Successfully";
+	echo '<script>alert("You are Successfully Registered!")</script>';
+    echo "<script>location.href='index.html'</script>";
 }
 
 ?>
