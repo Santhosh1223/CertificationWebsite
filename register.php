@@ -1,8 +1,8 @@
 <?php
 
-$host		= "localhost";      
-$username	= "root";
-$password	= ""; 
+$host		= "10.113.17.3";      
+$username	= "certify";
+$password	= "certify"; 
 $db_name	= "cert"; 
  
 $con = mysqli_connect($host, $username, $password,$db_name);
