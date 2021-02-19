@@ -20,7 +20,7 @@
 					</div>
 					<div>
 						<h5></h5>
-						<input class="input" type="text" placeholder="Email Address" name="EmailAdd" pattern=".+@gmail.com" required  oninvalid="this.setCustomValidity('Enter valid Email Adreess : @gmail.com ')"  oninput="this.setCustomValidity('')">
+						<input class="input" type="text" placeholder="Email Address" name="EmailAdd" pattern=".+@virtusa.com" required  oninvalid="this.setCustomValidity('Enter valid Email Address : @virtusa.com ')"  oninput="this.setCustomValidity('')">
 					</div>
 				</div>
 				<div class="input-div two">
@@ -29,7 +29,7 @@
 					</div>
 					<div>
 						<h5></h5>
-						<input class="input" type="Password" placeholder="Password" name="Password" required>
+						<input class="input" type="Password" placeholder="Password" minlength="8" oninvalid="this.setCustomValidity('Password must contain atleast 8 characters! ')" oninput="this.setCustomValidity('')" name="Password" required>
 					</div>
 				</div>
 				<input type="submit" class="btn" value="LOGIN" formaction="login.php">

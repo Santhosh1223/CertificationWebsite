@@ -42,7 +42,7 @@ class SMTP
      * The SMTP port to use if one is not specified.
      * @var integer
      */
-    const DEFAULT_SMTP_PORT = 25;
+    const DEFAULT_SMTP_PORT = 587;
 
     /**
      * The maximum line length allowed by RFC 2822 section 2.1.1
@@ -89,7 +89,7 @@ class SMTP
      * @deprecated This is only ever used as a default value, so use the `DEFAULT_SMTP_PORT` constant instead
      * @see SMTP::DEFAULT_SMTP_PORT
      */
-    public $SMTP_PORT = 25;
+    public $SMTP_PORT = 587;
 
     /**
      * SMTP reply line ending.
@@ -232,21 +232,21 @@ class SMTP
                 break;
             case 'html':
                 //Cleans up output a bit for a better looking, HTML-safe output
-                echo gmdate('Y-m-d H:i:s') . ' ' . htmlentities(
+              /*  echo gmdate('Y-m-d H:i:s') . ' ' . htmlentities(
                     preg_replace('/[\r\n]+/', '', $str),
                     ENT_QUOTES,
                     'UTF-8'
                 ) . "<br>\n";
-                break;
+                break;*/
             case 'echo':
             default:
                 //Normalize line breaks
                 $str = preg_replace('/(\r\n|\r|\n)/ms', "\n", $str);
-                echo gmdate('Y-m-d H:i:s') . "\t" . str_replace(
+                /*echo gmdate('Y-m-d H:i:s') . "\t" . str_replace(
                     "\n",
                     "\n                   \t                  ",
                     trim($str)
-                ) . "\n";
+                ) . "\n";*/
         }
     }
 

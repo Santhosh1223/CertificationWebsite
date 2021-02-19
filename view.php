@@ -7,7 +7,6 @@ if(!isset($_SESSION['ID'])){
 	header('location:index.html');
 }
 
-
 ?>
 
 
@@ -44,6 +43,7 @@ th, td {
   background-color: #fe7879 ;
   color: black;
 }
+
 </style>
 <body style="background-color: #FFD95C;">
 		<form><br><br><h2 style="padding-left: 550px; padding-top: 10px;color: #333; font-size: 40px;">Certification Record(s)</h2>
@@ -68,7 +68,9 @@ th, td {
     		<th>Date of certification</th>
     		<th>Expiry Date of Certification</th>
 			<th>Validity</th>
-  			</tr>
+		<th>Number of days left for expiry</th>
+  		
+	</tr>
 
   <?php
 
@@ -91,10 +93,11 @@ th, td {
 				
 				$date1=date_create($row4[6]);
 				$d1=date_format($date1,"d-m-Y");
-
+				$today = date('d-m-Y');
 				$date2=date_create($row4[7]);
 				$d2=date_format($date2,"d-m-Y");
-
+				$diff = strtotime($today) - strtotime($d2); 
+    				$nod=  abs(round($diff / 86400)); 
 				echo "<tr>    
 				<td>$row4[1]</td>
 				<td>$cs</td>
@@ -104,13 +107,12 @@ th, td {
 				<td>$d1</td>
 				<td>$d2</td>
 				<td>$row4[8]</td>
-				</tr>";
-			}
-
-        }
-
-
-  ?>
+				<td>$nod</td>
+	
+</tr>";
+}
+}
+?>  
 </table>
 
 </div>

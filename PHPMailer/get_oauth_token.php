@@ -21,16 +21,17 @@ use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
+use League\OAuth2\Client\Provider\Google;
 
 session_start();
 
 //If this automatic URL doesn't work, set it yourself manually
-$redirectUri = isset($_SERVER['HTTPS']) ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+$redirectUri = 'http://getcertify.tk/CertificationWebsite/PHPMailer/get_oauth_token.php';
 //$redirectUri = 'http://localhost/phpmailer/get_oauth_token.php';
 
 //These details obtained are by setting up app in Google developer console.
-$clientId = 'RANDOMCHARS-----duv1n2.apps.googleusercontent.com';
-$clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
+$clientId = '83056815576-ddm5htj0n0v0rp6e1ref1haj0lqn1nge.apps.googleusercontent.com';
+$clientSecret = 'PooQmkUtZv42GIMT4KhGBlcw';
 
 class Google extends AbstractProvider
 {
@@ -160,3 +161,5 @@ if (!isset($_GET['code'])) {
     // Use this to get a new access token if the old one expires
     echo 'Refresh Token: ' . $token->getRefreshToken();
 }
+
+?>

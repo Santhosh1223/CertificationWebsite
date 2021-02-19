@@ -1,3 +1,5 @@
+
+
 <?php
  
 session_start();
@@ -113,10 +115,12 @@ if(!isset($_SESSION['ID'])){
 				</div>
 				<!-- 
 					<input type="submit" class="btn" value="LOGIN" formaction="options.html"> -->
+            			<input type="file" name="file"/>
+				
 				<div class="upldbtn">
-				<input type="submit" class="btn two" value="UPLOAD" formaction="certdetails.php"></div>	
-			</form>
-		</div>	
+				<input type="submit" class="btn two" value="UPLOAD" formaction="certdetails.php">
+        </form>
+	</div>
 	</div>
 	<script type="text/javascript" src="js/main.js"></script>
 

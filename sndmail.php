@@ -1,9 +1,5 @@
 <?php
 
-session_start();
-$m=$_SESSION["Email"];
-echo $_SESSION["Email"];
-
 
 /**
  * This example shows making an SMTP connection with authentication.
@@ -27,9 +23,9 @@ $mail->SMTPDebug = 2;
 //Ask for HTML-friendly debug output
 $mail->Debugoutput = 'html';
 //Set the hostname of the mail server
-$mail->Host = "smtp.gmail.com";
+$mail->Host = "ssl://smtp.gmail.com";
 //Set the SMTP port number - likely to be 25, 465 or 587
-$mail->Port = 587;
+$mail->Port = 465;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
 //Username to use for SMTP authentication
@@ -41,14 +37,14 @@ $mail->setFrom('certadder@gmail.com', 'Certify');
 ////Set an alternative reply-to address
 //$mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
-$mail->addAddress($m);
+$mail->addAddress('sandoo4work@gmail.com');
 //Set the subject line
-$mail->Subject = 'PHPMailer SMTP test';
+$mail->Subject = 'Certificate Uploaded Succesfully';
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 //$mail->msgHTML(file_get_contents('C:\xampp\htdocs\cert\PHPMailer\examples\contents.html'), dirname(__FILE__));
 //Replace the plain text body with one created manually
-$mail->Body = 'This is a plain-text message body';
+$mail->Body = 'Your Certificate details are uploaded succesfully';
 //Attach an image file
 //$mail->addAttachment('images/phpmailer_mini.png');
 
@@ -58,3 +54,6 @@ if (!$mail->send()) {
 } else {
     echo "Message sent!";
 }
+
+
+?>
